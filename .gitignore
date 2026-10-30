@@ -1,0 +1,44 @@
+# Local environments and secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Python/build/editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+.VSCodeCounter/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Generated state, forecasts and private original assets
+out/
+data/prices/
+data/price_cache/
+data/forecast_prices.json
+price_forecaster/env/
+price_forecaster/datasets_folder/*
+!price_forecaster/datasets_folder/README.md
+price_forecaster/models/*
+!price_forecaster/models/README.md
+EnergyBot5/bin/
+EnergyBot5/optimization/Euris/test.parquet
+EnergyBot5/optimization/Euris/data/
+EnergyBot5/optimization/Euris/models/
+legacy/notebooks/input_data.json
+*.log
+*.tmp
+*.zip
+*.rar
+.ipynb_checkpoints/

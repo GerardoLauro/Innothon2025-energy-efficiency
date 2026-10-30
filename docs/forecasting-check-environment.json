@@ -1,0 +1,21 @@
+{
+  "purpose": "Environment in which the original NHITS weights were loaded and used without training; not a lock for a separately installed clean environment.",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "torch": "2.8.0",
+    "scikit-learn": "1.7.2",
+    "xgboost": "3.0.5",
+    "shap": "0.48.0",
+    "matplotlib": "3.10.7",
+    "mplcursors": "0.7",
+    "openmeteo-requests": "1.7.3",
+    "requests-cache": "1.2.1",
+    "retry-requests": "2.0.0",
+    "scipy": "1.16.2",
+    "openpyxl": "3.1.5",
+    "joblib": "1.5.2"
+  }
+}

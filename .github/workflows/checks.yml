@@ -1,0 +1,54 @@
+name: Repository checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.12']
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
+      - name: Install tested dependencies and project
+        run: |
+          python -m pip install -r requirements-dev.lock
+          python -m pip install --no-deps --no-build-isolation -e .
+          python -m pip check
+      - name: Structure, links, JSON and credential patterns
+        run: python scripts/check_repository.py
+      - name: Offline tests
+        run: python -m pytest -q --junitxml=out/ci-tests.xml
+      - name: Build and check wheel outside repository
+        run: |
+          python -m build --no-isolation
+          python scripts/check_wheel.py
+      - name: Check Bash scripts
+        if: runner.os == 'Linux'
+        run: |
+          bash -n run_app.sh
+          bash -n scripts/setup.sh
+          bash -n scripts/run_chat.sh
+          bash -n scripts/make_prices.sh
+      - name: Check PowerShell scripts
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Get-ChildItem scripts/*.ps1 | ForEach-Object {
+            $errors = $null
+            $tokens = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$errors) > $null
+            if ($errors) { throw ($errors | Out-String) }
+          }

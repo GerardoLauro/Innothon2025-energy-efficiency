@@ -1,0 +1,4 @@
+RE-EMIT SAVE STRICT:
+- Ripeti ESATTAMENTE l'ultimo blocco come JSON.
+- Tra `>>> SAVE` e la fine, solo un array JSON. Nessuna parola in piu.
+- Usa gli stessi dati gia menzionati. Non riformulare, non aggiungere, non spiegare.

@@ -1,0 +1,24 @@
+include README.md LICENSE CHANGELOG.md CONTRIBUTING.md SECURITY.md
+include pyproject.toml requirements*.txt requirements*.lock
+include .gitignore .gitattributes .env.example
+include run_app.py run_app.sh run_app.bat main.py __main__.py EnergyBot5.py
+recursive-include .github *.yml
+recursive-include docs *.md *.pdf *.json
+recursive-include scripts *.py *.sh *.ps1
+recursive-include data/examples *.json
+include data/README.md data/asset-manifest.json
+recursive-include spec *.md
+recursive-include plan *.md
+recursive-include legacy *.md *.ipynb
+include price_forecaster/Create_environment.bat
+include price_forecaster/datasets_folder/README.md price_forecaster/models/README.md
+include EnergyBot5/optimization/Euris/README.md
+recursive-include energy_planner/prompts *.txt *.md
+recursive-include energy_planner/resources *.json
+recursive-include tests *.py *.md
+prune out
+prune build
+prune dist
+prune .git
+prune .venv
+global-exclude __pycache__ *.py[cod] *.zip *.rar *.csv *.pth *.pkl *.parquet

@@ -1,0 +1,71 @@
+{
+  "time": {
+    "slot_minutes": 5,
+    "slots": 12
+  },
+  "pricing": [
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "workforce": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "machines": [
+    {
+      "id": "demo_machine",
+      "name": "Macchina sintetica",
+      "power_kW": 2
+    }
+  ],
+  "activities": [
+    {
+      "id": "demo_A",
+      "duration_slots": 3,
+      "window_slots": [
+        0,
+        9
+      ],
+      "latest_start_slot": 9,
+      "window_end_slot": 12,
+      "employees": 1,
+      "requires_machine": "demo_machine"
+    },
+    {
+      "id": "demo_B",
+      "duration_slots": 3,
+      "window_slots": [
+        0,
+        9
+      ],
+      "latest_start_slot": 9,
+      "window_end_slot": 12,
+      "employees": 1,
+      "requires_machine": "demo_machine"
+    }
+  ],
+  "objective": "min_cost",
+  "assumptions": [
+    "DATI SINTETICI: esempio tecnico, non uno scenario reale."
+  ]
+}

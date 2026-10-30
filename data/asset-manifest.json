@@ -1,0 +1,46 @@
+{
+  "format": 1,
+  "description": "Original assets; redistribution permissions are not established by this manifest.",
+  "files": [
+    {
+      "path": "data/forecast_prices.json",
+      "bytes": 9437,
+      "sha256": "1e4710d9993d31df00bdb0bbb7b801c067370cd5b81108b1a9efa776c5e1385a"
+    },
+    {
+      "path": "EnergyBot5/optimization/Euris/test.parquet",
+      "bytes": 1213825,
+      "sha256": "f401ca3ef49cbc2319899f46d42c84d01f953521e38efb54d095b7fae77c58eb"
+    },
+    {
+      "path": "price_forecaster/datasets_folder/Consumi_Orari_2024.csv",
+      "bytes": 6357661,
+      "sha256": "41c3067c96144d1b884bcaf3783b0734816c9524311e0683a89baf1315272d22"
+    },
+    {
+      "path": "price_forecaster/datasets_folder/Prices_dataset.csv",
+      "bytes": 239309,
+      "sha256": "f12b9bb86aefbff0878f3cc2977a7f323d30dfc5aa6d1dd8f81f06287fc03dc0"
+    },
+    {
+      "path": "price_forecaster/datasets_folder/Weather_2024_2025.csv",
+      "bytes": 49964542,
+      "sha256": "a143234beeb6c0c57327e2b9a0c3e6489690d7e5a4b1529b4654e7f169d622f8"
+    },
+    {
+      "path": "price_forecaster/models/nhits_model.pth",
+      "bytes": 6918803,
+      "sha256": "f0e0ec1f183a6f4988b5cbd74abd590aebaffa99ccefd21a294c59ac43e5e52b"
+    },
+    {
+      "path": "price_forecaster/models/nhits_model_scaler_x.pkl",
+      "bytes": 129,
+      "sha256": "4102f47340e3cd21b3732a35cd3dda14d7dd8083857c984ffec829c6cf19a5cd"
+    },
+    {
+      "path": "price_forecaster/models/nhits_model_scaler_y.pkl",
+      "bytes": 474,
+      "sha256": "67bbec0a5db5ddb569c9256e379a677488c19ca2c1d6aa080ea187caa4c32ca7"
+    }
+  ]
+}

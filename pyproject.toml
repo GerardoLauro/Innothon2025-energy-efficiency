@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "innothon-energy-planner"
+version = "0.1.0"
+description = "CLI prototype for conversational energy planning and scheduling"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+  "pulp>=3.3,<4", "numpy>=1.26,<3", "joblib>=1.4,<2",
+  "python-dotenv>=1,<2", "requests>=2.32,<3", "tzdata>=2025.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "build>=1,<2"]
+forecasting = [
+  "pandas>=2.2,<3", "torch>=2.6,<3", "scikit-learn>=1.5,<2",
+  "xgboost>=2,<4", "shap>=0.46,<1", "matplotlib>=3.8,<4",
+  "mplcursors>=0.5,<1", "openmeteo-requests>=1,<2", "requests-cache>=1,<2",
+  "retry-requests>=2,<3", "scipy>=1.12,<2", "openpyxl>=3.1,<4",
+]
+research = ["pandas>=2.2,<3", "lightgbm>=4,<5", "pyarrow>=15", "gurobipy>=11"]
+
+[project.scripts]
+energy-planner = "energy_planner.cli.app:main"
+
+[tool.setuptools.packages.find]
+include = ["energy_planner*", "EnergyBot5*", "optimization*", "price_forecaster*"]
+
+[tool.setuptools.package-data]
+"energy_planner.prompts" = ["*.txt", "*.md"]
+"energy_planner" = ["resources/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["smoke: offline command line and packaging checks"]

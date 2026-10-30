@@ -1,0 +1,13 @@
+# Tested dependency snapshot: CPython 3.12, Windows, 2026-10-30.
+# Project installation is a separate step.
+certifi==2026.10.23
+charset-normalizer==3.5.2
+cloudpickle==3.1.2
+idna==3.20
+joblib==1.6.0
+numpy==2.5.4
+pulp==3.3.0
+python-dotenv==1.2.4
+requests==2.34.2
+tzdata==2026.6
+urllib3==2.8.0
